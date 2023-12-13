@@ -80,16 +80,16 @@ MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
-LANGUAGES = ["malayalam", "mal", "tamil", "tam" ,"english", "eng", "hindi", "hin", "telugu", "tel", "kannada", "kan"]
+LANGUAGES = ["Hindi", "", "English", "Tamil" ,"Telugu", "Kannada", "Malayalam", "Punjabi", "Marathi", "Gujarati", "Dual", "Multi"]
 
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
-QUALITY = ["S-PRINT", "HDTS", "480p", "720p", "1080p", "4K"]
+QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "480p", "720p", "1080p", "4K"]
 
 # stream features vars
 F2LINK_C = environ.get("F2LINK_C", "-1001565011277")
-ON_DWNLD = environ.get("ON_DWNLD", "abfilestreambot-68dfdc1ab41c.herokuapp.com")
-ON_WATCH = environ.get("ON_WATCH", "abfilestreambot-68dfdc1ab41c.herokuapp.com")
+ON_DWNLD = environ.get("ON_DWNLD", "abbotz-stream-298393299e58.herokuapp.com")
+ON_WATCH = environ.get("ON_WATCH", "abbotz-stream-298393299e58.herokuapp.com")
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")

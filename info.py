@@ -21,7 +21,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://te.legra.ph/file/cce1c345a4a752453a3a3.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://graph.org/file/33a7acf9966a33ac206fe.jpg https://graph.org/file/2f2f6c672f516eafb4c6e.jpg https://graph.org/file/fd97b4bae87143509869f.jpg https://graph.org/file/59b4e23d5d2a3f6edaae3.jpg https://graph.org/file/cd3861362788d39e90101.jpg https://graph.org/file/6f58953062b02a5903b10.jpg https://graph.org/file/ff0078cbd7ae59c411f38.jpg https://graph.org/file/3fdd3fb269b334847039c.jpg https://graph.org/file/988846759fd7e0d609fee.jpg https://graph.org/file/835b8fae2976e8d188160.jpg https://graph.org/file/e771452804103989166b1.jpg https://graph.org/file/dfe2ecc2262858c548764.jpg https://graph.org/file/c4dd7cef5dcd6dd488679.jpg https://graph.org/file/18e3f34d01d65ee146935.jpg https://graph.org/file/bf88ff634e8dc7390ec8f.jpg https://graph.org/file/6e1298f74a7b0a548da84.jpg https://graph.org/file/b42f39973fab2b202847a.jpg https://graph.org/file/5e3fa559b8553c52b8872.jpg https://graph.org/file/93ca99e3d4d72d636b141.jpg https://graph.org/file/746afaff3f5e0e39b1fa3.jpg https://graph.org/file/2639450110b459360961d.jpg https://graph.org/file/a78b83535992169bcc10b.jpg https://graph.org/file/45f9347064ab8c96674f9.jpg https://graph.org/file/ae9bba86a7509f7c6b0bc.jpg https://graph.org/file/dc991712fae3ac33d48c3.jpg https://graph.org/file/2366d61487a9a1b091929.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://te.legra.ph/file/6f55d902f9bf2d0afd4bb.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://te.legra.ph/file/15c1ad448dfe472a5cbb8.jpg")
@@ -36,8 +36,8 @@ auth_channel = environ.get('AUTH_CHANNEL','')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '')
-reqst_channel = environ.get('REQST_CHANNEL_ID', '')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001975750863')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001911858181')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
@@ -78,9 +78,9 @@ INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), False)
 
-LANGUAGES = ["Hindi", "", "English", "Tamil" ,"Telugu", "Kannada", "Malayalam", "Punjabi", "Marathi", "Gujarati", "Dual", "Multi"]
+LANGUAGES = ["Hindi", "Hin", "English", "Tamil" ,"Telugu", "Kannada", "Malayalam", "Punjabi", "Marathi", "Gujarati", "Dual", "Multi"]
 
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 

@@ -87,9 +87,9 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "480p", "720p", "1080p", "4K"]
 
 # stream features vars
-F2LINK_C = environ.get("F2LINK_C", "-1001565011277")
-ON_DWNLD = environ.get("ON_DWNLD", "abbotz-stream-298393299e58.herokuapp.com")
-ON_WATCH = environ.get("ON_WATCH", "abbotz-stream-298393299e58.herokuapp.com")
+F2LINK_C = environ.get("F2LINK_C", "-1001902770192")
+ON_DWNLD = environ.get("ON_DWNLD", "file2linkbot123-aacded689ef6.herokuapp.com")
+ON_WATCH = environ.get("ON_WATCH", "file2linkbot123-aacded689ef6.herokuapp.com")
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")

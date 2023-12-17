@@ -1092,6 +1092,93 @@ async def removetutorial(bot, message):
     await save_group_settings(grpid, 'is_tutorial', False)
     await reply.edit_text(f"<b>Successfully Removed Your Tutorial Link!!!</b>")
 
+# -------------------» sᴇᴛ-ғᴏʀᴄᴇ-sᴜʙ «-------------------- #
+
+@Client.on_message(filters.command('forcesub'))
+async def forcesub_cmd(bot, message):
+    grpid = None
+    userid = message.from_user.id if message.from_user else None
+    if not userid:
+        return await message.reply(f"ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ. ᴜsᴇ /connect {message.chat.id} ɪɴ ᴘᴍ")
+
+    chat_type = message.chat.type
+
+    if chat_type == enums.ChatType.PRIVATE:
+        grpid = await active_connection(str(userid))
+        if grpid is not None:
+            grp_id = grpid
+            try:
+                chat = await bot.get_chat(grpid)
+                title = chat.title
+            except:
+                await message.reply_text("ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴘʀᴇsᴇɴᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ !!", quote=True)
+                return
+        else:
+            await message.reply_text("ɪ'ᴍ ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ᴀɴʏ ɢʀᴏᴜᴘs !", quote=True)
+            return
+
+    elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        grp_id = message.chat.id
+        title = message.chat.title
+
+    else:
+        return await message.reply_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ", quote=True)
+
+    data = message.text
+    userid = message.from_user.id
+    user = await bot.get_chat_member(grp_id, userid)
+    if user.status != enums.ChatMemberStatus.ADMINISTRATOR and user.status != enums.ChatMemberStatus.OWNER and str(userid) not in ADMINS:
+        return await message.reply_text("<b>ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴀᴄᴄᴇss ᴛᴏ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ !</b>")
+    try:
+        command, forcesub = data.split(" ")
+    except ValueError:
+        return await message.reply_text(f"<b>ʜᴇʏ {message.from_user.mention}, ᴄᴏᴍᴍᴀɴᴅ ɪɴᴄᴏᴍᴘʟᴇᴛᴇ :(\n\nᴜsᴇ ᴘʀᴏᴘᴇʀ ғᴏʀᴍᴀᴛ !\n\nғᴏʀᴍᴀᴛ:\n\n<code>/forcesub CHANNEL_ID or GROUP_ID</code></b>")
+
+    reply = await message.reply_text("<b>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...</b>")
+    await save_group_settings(grp_id, 'forcesub', forcesub)
+    await reply.edit(f"sᴜᴄᴄᴇssғᴜʟʟʏ ᴜᴘɢʀᴀᴅᴇᴅ ʏᴏᴜʀ ғᴏʀᴄᴇ sᴜʙ ғᴏʀ {title} ᴛᴏ\n\n{forcesub}")
+
+
+# -------------------» ᴅᴇʟ-ғᴏʀᴄᴇ-sᴜʙ «-------------------- #
+
+@Client.on_message(filters.command('del_forcesub'))
+async def del_forcesub_cmd(bot, message):
+    grpid = None
+    userid = message.from_user.id if message.from_user else None
+    if not userid:
+        return await message.reply(f"ʏᴏᴜ ᴀʀᴇ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ. ᴜsᴇ /connect {message.chat.id} ɪɴ ᴘᴍ")
+
+    chat_type = message.chat.type
+
+    if chat_type == enums.ChatType.PRIVATE:
+        grpid = await active_connection(str(userid))
+        if grpid is not None:
+            grp_id = grpid
+            try:
+                chat = await bot.get_chat(grpid)
+                title = chat.title
+            except:
+                await message.reply_text("ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴘʀᴇsᴇɴᴛ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ !!", quote=True)
+                return
+        else:
+            await message.reply_text("ɪ'ᴍ ɴᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ᴀɴʏ ɢʀᴏᴜᴘs !", quote=True)
+            return
+
+    elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        grp_id = message.chat.id
+        title = message.chat.title
+
+    else:
+        return await message.reply_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ", quote=True)
+
+    userid = message.from_user.id
+    user = await bot.get_chat_member(grp_id, userid)
+    if user.status != enums.ChatMemberStatus.ADMINISTRATOR and user.status != enums.ChatMemberStatus.OWNER and str(userid) not in ADMINS:
+        return await message.reply_text("<b>ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴀᴄᴄᴇss ᴛᴏ ᴛʜɪs ᴄᴏɴᴍᴀɴᴅ !</b>")
+    reply = await message.reply_text("<b>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...</b>")
+    await save_group_settings(grp_id, 'forcesub', AUTH_CHANNEL)
+    await reply.edit(f"sᴜᴄᴄᴇssғᴜʟʟʏ ʀᴇᴍᴏᴠᴇᴅ ʏᴏᴜʀ ғᴏʀᴄᴇ.")
+
 @Client.on_message(filters.command("restart") & filters.user(ADMINS))
 async def stop_button(bot, message):
     msg = await bot.send_message(text="**🔄 𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙴𝚂 𝚂𝚃𝙾𝙿𝙴𝙳. 𝙱𝙾𝚃 𝙸𝚂 𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶...**", chat_id=message.chat.id)       

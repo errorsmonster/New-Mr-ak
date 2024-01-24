@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '28296965'))
 API_HASH = environ.get('API_HASH', '67b028c7329c1b29bd69608dbbbffbc1')
-BOT_TOKEN = environ.get('BOT_TOKEN', "6273350573:AAGDQc5TNfF4axRS2I9jUYnjrQjOond2x_Y")
+BOT_TOKEN = environ.get('BOT_TOKEN', "6363596371:AAHrz6cmcUrnZ1-_ygVjHF-f25ngstBBu7I")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -32,7 +32,7 @@ CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHAN
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '1948970741 5140601098').split()]
-auth_channel = environ.get('AUTH_CHANNEL','-1001937911801')
+auth_channel = environ.get('AUTH_CHANNEL','')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
@@ -43,9 +43,9 @@ SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://JHONWICK:JHONWICK@cluster0.rk9wepx.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "JHONWICK")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Thomas0bot:Thomas0bot@cluster0.b6vlca5.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Thomas0bot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Thomas0bot')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
@@ -56,13 +56,13 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+h6dXpkdS6GNmY2Vl')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Bishnoi_botz')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+lQaS7dIP0XY3MmVl')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Thomas0botBkp')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/HOW_TO_USE_BISHNOI_BOTZ/17')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Tʜᴀɴᴋ Yᴏᴜ Abhii❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001902490675'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Bishnoi_botz_support')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001856520152'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '+lQaS7dIP0XY3MmVl')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)

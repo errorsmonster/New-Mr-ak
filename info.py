@@ -80,11 +80,11 @@ MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
-LANGUAGES = ["Hindi", "Hin", "English", "Tamil" ,"Telugu", "Kannada", "Malayalam", "Punjabi", "Marathi", "Gujarati", "Dual", "Multi"]
+LANGUAGES = ["Tamil", "Tam", "Telugu", "Tel", "Kannada", "kan", "Malayalam", "Mal", "Hindi", "Hin", "Punjabi", "Marathi", "Gujarati", "English", "Eng", "Dual", "Multi"]
 
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
-QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "480p", "720p", "1080p", "4K"]
+QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "360p", "480p", "720p", "1080p", "1440p", "2160p", "4K"]
 
 # stream features vars
 F2LINK_C = environ.get("F2LINK_C", "-1002092329421")

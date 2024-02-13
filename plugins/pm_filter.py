@@ -60,9 +60,9 @@ async def stream_downloader(bot, query):
     #online = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
     #download = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
     page_link = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
-    download = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
+    stream_link = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
     online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
-    stream_link = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
+    download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
 
     await query.edit_message_reply_markup(
         reply_markup=InlineKeyboardMarkup(

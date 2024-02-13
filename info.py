@@ -36,34 +36,34 @@ auth_channel = environ.get('AUTH_CHANNEL','-1002044250842')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-')
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001955218723')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-1002053122232')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://akmonsterprogrammer:S.Aruna1155182089@mraklinkzbot.pqbuvv4.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "MrAKLinkZbot")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', '')
-SHORTLINK_API = environ.get('SHORTLINK_API', '')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'gyanilinks.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'b6696a9a3a4d95031b076b9b8b40e163f9f29ff5')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', '')
-CHNL_LNK = environ.get('CHNL_LNK', '')
-TUTORIAL = environ.get('TUTORIAL', '')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+1xujDl3NzN02N2Jl')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/MrAK_LinkZz')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/MrAK_LinkZz/5')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
-MSG_ALRT = environ.get('MSG_ALRT', 'Tʜᴀɴᴋ Yᴏᴜ Abhii❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Bishnoi_botz_support')
-P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
+MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002053122232'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'MrAK_LinkZz_Support_Chat')
+P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
 AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
@@ -78,7 +78,7 @@ INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "False")), False)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), False)
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
 LANGUAGES = ["Hindi", "Hin", "English", "Tamil" ,"Telugu", "Kannada", "Malayalam", "Punjabi", "Marathi", "Gujarati", "Dual", "Multi"]
 
@@ -87,9 +87,9 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "480p", "720p", "1080p", "4K"]
 
 # stream features vars
-F2LINK_C = environ.get("F2LINK_C", "-")
-ON_DWNLD = environ.get("ON_DWNLD", "bfiletolink-8520b2d36771.herokuapp.com")
-ON_WATCH = environ.get("ON_WATCH", "bfiletolink-8520b2d36771.herokuapp.com")
+F2LINK_C = environ.get("F2LINK_C", "-1002092329421")
+ON_DWNLD = environ.get("ON_DWNLD", "filetolinkak-fed7e49e496c.herokuapp.com")
+ON_WATCH = environ.get("ON_WATCH", "filetolinkak-fed7e49e496c.herokuapp.com")
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")

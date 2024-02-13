@@ -31,37 +31,37 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002044250842').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '1948970741 5140601098').split()]
+PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
 auth_channel = environ.get('AUTH_CHANNEL','-1002044250842')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1001586051565')
-reqst_channel = environ.get('REQST_CHANNEL_ID', '-1001815413045')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-')
+reqst_channel = environ.get('REQST_CHANNEL_ID', '-')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://JHONWICK:JHONWICK@cluster0.rk9wepx.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "JHONWICK")
+DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_NAME = environ.get('DATABASE_NAME', "")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Ziplinker.net')
-SHORTLINK_API = environ.get('SHORTLINK_API', '32d47f202b4faed5fa070f05cf60a075e1c50ff1')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', '')
+SHORTLINK_API = environ.get('SHORTLINK_API', '')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
-DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '-1002107694899').split()]
+DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+h6dXpkdS6GNmY2Vl')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Bishnoi_botz')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/HOW_TO_USE_BISHNOI_BOTZ/17')
+GRP_LNK = environ.get('GRP_LNK', '')
+CHNL_LNK = environ.get('CHNL_LNK', '')
+TUTORIAL = environ.get('TUTORIAL', '')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', 'Tʜᴀɴᴋ Yᴏᴜ Abhii❤️')
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001902490675'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Bishnoi_botz_support')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
@@ -87,7 +87,7 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "480p", "720p", "1080p", "4K"]
 
 # stream features vars
-F2LINK_C = environ.get("F2LINK_C", "-1001902770192")
+F2LINK_C = environ.get("F2LINK_C", "-")
 ON_DWNLD = environ.get("ON_DWNLD", "bfiletolink-8520b2d36771.herokuapp.com")
 ON_WATCH = environ.get("ON_WATCH", "bfiletolink-8520b2d36771.herokuapp.com")
 

@@ -53,7 +53,7 @@ async def stream_downloader(bot, query):
     log_channel = F2LINK_C
     f_caption = f"{files.file_name}"
     msg = await bot.send_cached_media(
-        chat_id=log_channel,
+        chat_id=int(log_channel),
         file_id=file_id,
         caption=f_caption)
 

@@ -173,6 +173,9 @@ async def next_page(bot, query):
         btn.insert(0, [
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+        ])
     else:
         btn = []
         btn.insert(0, 
@@ -184,6 +187,9 @@ async def next_page(bot, query):
         )
         btn.insert(0, [
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+        ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
         ])
     try:
         if settings['max_btn']:
@@ -400,6 +406,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0, [
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+        ])
     else:
         btn = []
         btn.insert(0, 
@@ -411,6 +420,9 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0, [
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+        ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
         ])
 
     if offset != "":
@@ -589,6 +601,9 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0, [
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+        ])
         
     offset = 0
 
@@ -712,6 +727,9 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0, [
         InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+        ])
     else:
         btn = []
         btn.insert(0, 
@@ -723,6 +741,9 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         )
         btn.insert(0, [
         InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
+        ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
         ])
 
     if offset != "":
@@ -2127,6 +2148,9 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0, [
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+        ])
     else:
         btn = []
         btn.insert(0, 
@@ -2138,6 +2162,9 @@ async def auto_filter(client, msg, spoll=False):
         )
         btn.insert(0, [
             InlineKeyboardButton("", url=settings['tutorial'])
+        ])
+        btn.insert(0, [
+            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
         ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0

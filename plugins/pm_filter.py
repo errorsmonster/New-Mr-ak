@@ -174,7 +174,7 @@ async def next_page(bot, query):
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
     else:
         btn = []
@@ -189,7 +189,7 @@ async def next_page(bot, query):
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
     try:
         if settings['max_btn']:
@@ -407,7 +407,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
     else:
         btn = []
@@ -422,7 +422,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
 
     if offset != "":
@@ -602,7 +602,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
         
     offset = 0
@@ -728,7 +728,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
     else:
         btn = []
@@ -743,7 +743,7 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
 
     if offset != "":
@@ -2149,7 +2149,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton("🚸Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ🚸", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
     else:
         btn = []
@@ -2164,7 +2164,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton("", url=settings['tutorial'])
         ])
         btn.insert(0, [
-            InlineKeyboardButton("Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ Gʀᴏᴜᴘ", url= "https://t.me/+1xujDl3NzN02N2Jl")
+            InlineKeyboardButton("🎬Mᴏᴠɪᴇ Sᴇᴀʀᴄʜ🔎 Gʀᴏᴜᴘ🙋", url=GRP_LNK)
         ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0

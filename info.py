@@ -88,7 +88,7 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 QUALITY = ["PreDVD", "HDTS", "S-PRINT", "HQ", "HDRIP", "HD", "TRUE WEB-DL", "360p", "480p", "720p", "1080p", "1440p", "2160p", "4K"]
 
 # stream features vars
-F2LINK_C = environ.get("F2LINK_C", "-1002092329421")
+F2LINK_C = environ.get("F2LINK_C", "-1002026821864")
 ON_DWNLD = environ.get("ON_DWNLD", "filetolinkak-fed7e49e496c.herokuapp.com")
 ON_WATCH = environ.get("ON_WATCH", "filetolinkak-fed7e49e496c.herokuapp.com")
 

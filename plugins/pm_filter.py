@@ -46,12 +46,11 @@ SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
 
 @Client.on_callback_query(filters.regex(r"^stream"))
-async def stream_downloader(bot, query, message):
-    file_id = query.data.split('#', 1)[1]
+async def stream_downloader(bot, callback_query, chat_id, message_id):
+    file_id = callback_query.data.split('#', 1)[1]
     files_ = await get_file_details(file_id)
     files = files_[0]
-    user = message.from_user.id
-    chat_id=int(log_channel)
+    user = callback_query.from_user.id
     log_channel = F2LINK_C
     f_caption = f"{files.file_name}"
     msg = await bot.send_cached_media(
@@ -67,7 +66,7 @@ async def stream_downloader(bot, query, message):
         online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
         download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
 
-        await query.edit_message_reply_markup(
+        await callback_query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(
         [
             [

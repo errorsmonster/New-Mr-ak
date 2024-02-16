@@ -46,30 +46,33 @@ SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
 
 @Client.on_callback_query(filters.regex(r"^stream"))
-async def stream_downloader(bot, query):
+async def stream_downloader(bot, query, message):
     file_id = query.data.split('#', 1)[1]
     files_ = await get_file_details(file_id)
     files = files_[0]
+    user = message.from_user.id
+    chat_id=int(log_channel)
     log_channel = F2LINK_C
     f_caption = f"{files.file_name}"
     msg = await bot.send_cached_media(
         chat_id=int(log_channel),
         file_id=file_id,
         caption=f_caption)
-
-    online = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
+    settings = await get_settings(chat_id)
+    if settings['is_shortlink'] and user not in PREMIUM_USER:
+    #online = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
     #download = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
-    #page_link = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
-    stream_link = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
-    #online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
-    download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
+        page_link = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
+        stream_link = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
+        online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
+        download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
 
-    await query.edit_message_reply_markup(
-        reply_markup=InlineKeyboardMarkup(
+        await query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🖥️ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ🖥️", url=online),
-                InlineKeyboardButton("📥ꜰᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ📥", url=download)
+                InlineKeyboardButton("🛡 Fast Download📥", url=online),
+                InlineKeyboardButton("▶ Watch online🖥️", url=download)
              ],[          
                 InlineKeyboardButton(' Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ', url= "https://t.me/MrAK_LinkZz/5")
             ],[          

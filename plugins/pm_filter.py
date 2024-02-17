@@ -46,42 +46,45 @@ SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
 
 @Client.on_callback_query(filters.regex(r"^stream"))
-async def stream_downloader(bot, query):
-    file_id = query.data.split('#', 1)[1]
+async def stream_downloader(bot, callback_query):
+    file_id = callback_query.data.split('#', 1)[1]
     files_ = await get_file_details(file_id)
     files = files_[0]
+    user = callback_query.from_user.id
     log_channel = F2LINK_C
     f_caption = f"{files.file_name}"
     msg = await bot.send_cached_media(
         chat_id=int(log_channel),
         file_id=file_id,
         caption=f_caption)
-
-    online = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
-    #download = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
-    #page_link = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
-    stream_link = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
-    #online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
-    download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
-
-    await query.edit_message_reply_markup(
-        reply_markup=InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("🖥️ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ🖥️", url=online),
-                InlineKeyboardButton("📥ꜰᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ📥", url=download)
-             ],[          
-                InlineKeyboardButton(' Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ', url= "https://t.me/MrAK_LinkZz/5")
-            ],[          
-                InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK),
-                InlineKeyboardButton('ɢʀᴏᴜᴘ', url=GRP_LNK)
-            ],[
-                InlineKeyboardButton('𝚆𝚎𝚎𝚔𝚕𝚢 𝚁𝚎𝚕𝚎𝚊𝚜𝚎𝚍 𝙼𝚘𝚟𝚒𝚎𝚜', url=WRM)
-            ],[
-                InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close_data')
-            ],
-        ]
-    ))
+    settings = await get_settings(msg.chat.id)
+    if settings['is_shortlink'] and user not in PREMIUM_USER:
+        page_link = f"https://{ON_WATCH}/watch/{msg.message_id}?hash={get_hash(msg)}"
+        stream_link = f"https://{ON_DWNLD}/{msg.message_id}?hash={get_hash(msg)}"
+        online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
+        download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
+    else:
+        online = f"https://{ON_WATCH}/watch/{msg.message_id}?hash={get_hash(msg)}"
+        download = f"https://{ON_DWNLD}/{msg.message_id}?hash={get_hash(msg)}"
+        await callback_query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🛡 Fast Download📥", url=online),
+                        InlineKeyboardButton("▶ Watch online🖥️", url=download)
+                    ], [
+                        InlineKeyboardButton(' Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ', url="https://t.me/MrAK_LinkZz/5")
+                    ], [
+                        InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK),
+                        InlineKeyboardButton('ɢʀᴏᴜᴘ', url=GRP_LNK)
+                    ], [
+                        InlineKeyboardButton('𝚆𝚎𝚎𝚔𝚕𝚢 𝚁𝚎𝚕𝚎𝚊𝚜𝚎𝚍 𝙼𝚘𝚟𝚒𝚎𝚜', url=WRM)
+                    ], [
+                        InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close_data')
+                    ],
+                ]
+            )
+        )
 
 @Client.on_message(filters.group | filters.private & filters.text & filters.incoming)
 async def give_filter(client, message):

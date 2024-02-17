@@ -63,6 +63,25 @@ async def stream_downloader(bot, callback_query):
         stream_link = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"
         online = await get_shortlink(chat_id=msg.chat.id, link=page_link)
         download = await get_shortlink(chat_id=msg.chat.id, link=stream_link)
+        await callback_query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("🛡 Fast Download📥", url=online),
+                        InlineKeyboardButton("▶ Watch online🖥️", url=download)
+                    ], [
+                        InlineKeyboardButton(' Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ', url="https://t.me/MrAK_LinkZz/5")
+                    ], [
+                        InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK),
+                        InlineKeyboardButton('ɢʀᴏᴜᴘ', url=GRP_LNK)
+                    ], [
+                        InlineKeyboardButton('𝚆𝚎𝚎𝚔𝚕𝚢 𝚁𝚎𝚕𝚎𝚊𝚜𝚎𝚍 𝙼𝚘𝚟𝚒𝚎𝚜', url=WRM)
+                    ], [
+                        InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close_data')
+                    ],
+                ]
+            )
+        )
     else:
         online = f"https://{ON_WATCH}/watch/{msg.id}?hash={get_hash(msg)}"
         download = f"https://{ON_DWNLD}/{msg.id}?hash={get_hash(msg)}"

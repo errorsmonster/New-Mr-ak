@@ -19,7 +19,6 @@ from Script import script
 from datetime import date, datetime 
 import pytz
 from aiohttp import web
-from plugins import web_server
 
 class Bot(Client):
 
